@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tasks',
     'django.contrib.humanize',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,35 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Configurações PWA
+PWA_APP_NAME = 'Tarefando'
+PWA_APP_DESCRIPTION = "Gerenciador de Tarefas Pessoal"
+PWA_APP_THEME_COLOR = '#2F80ED'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/images/Tarefando.png',
+        'sizes': '160x160',
+        "type": "image/png"
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': '/static/images/Tarefando.png',
+        'sizes': '160x160',
+        "type": "image/png"
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/Tarefando.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'tasks', 'static', 'js', 'serviceworker.js')

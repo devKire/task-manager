@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 app_name = 'tasks'
@@ -17,4 +17,5 @@ urlpatterns = [
     path('registrar/', views.registrar, name='registrar'),
     path('login/', views.user_login, name='login'),
     path('logout/', views.user_logout, name='logout'),  # Atualizada para nossa view personalizada
+    path('', include('pwa.urls')),
 ]
