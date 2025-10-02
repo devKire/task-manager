@@ -1,1 +1,17 @@
-"__pycache__/" 
+# Environments
+.env
+.venv
+venv/
+
+# Database
+db.sqlite3
+*.sqlite3
+
+# Static files
+staticfiles/
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
